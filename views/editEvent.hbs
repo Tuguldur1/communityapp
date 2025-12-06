@@ -1,0 +1,31 @@
+<h1 class="text-4xl font-extrabold mb-6 text-center text-gray-800">Edit Event</h1>
+
+<form action="/events/edit/{{event._id}}" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-5">
+  <label class="block">
+    <span class="text-gray-700 font-medium">Title</span>
+    <input type="text" name="title" value="{{event.title}}" required 
+           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+  </label>
+
+  <label class="block">
+    <span class="text-gray-700 font-medium">Description</span>
+    <textarea name="description" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">{{event.description}}</textarea>
+  </label>
+
+  <label class="block">
+    <span class="text-gray-700 font-medium">Date</span>
+    <input type="datetime-local" name="date" value="{{event.date}}" required 
+           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+  </label>
+
+  <label class="block">
+    <span class="text-gray-700 font-medium">Location</span>
+    <input type="text" name="location" value="{{event.location}}" 
+           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none">
+  </label>
+
+  <button type="submit" 
+          class="w-full bg-blue-600 text-white font-semibold p-3 rounded-lg hover:bg-blue-700 transition">
+    Update Event
+  </button>
+</form>
